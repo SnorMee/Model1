@@ -99,7 +99,7 @@ let y = 10
 let h = th/numY
 let w = tw/numX
 //Text and color
-let colorList = ['#ff6b6b', '#f06595', '#cc5de8', '#845ef7', '#5c7cfa', '#339af0', '#22b8cf', '#20c997', '#51cf66', '#94d82d', '#fcc419', '#ff922b'];
+let colorList = '#339af0';
 let headline = [
     '1. Residential & commercial development',
     '2. Agriculture & aquaculture',
@@ -154,7 +154,7 @@ for (let i = 0; i < Object.keys(data.children).length; i++) {
       var innerRect = paper.rect(x,y,AiH,AiH)
     }
     innerRect.attr({
-        fill: colorList[i]
+        fill: colorList
     });
     var text = paper.text(x + w / 2, y + h / 2,  headline[i]);
     text.attr({
@@ -162,7 +162,7 @@ for (let i = 0; i < Object.keys(data.children).length; i++) {
         "font-family": "Arial",
         "fill": "#000"
     });
-    var extraText = paper.text(x+w/2,y+h/2+12+2, "Number of Threats: " + String(data['children'][i+1]['value']));
+    var extraText = paper.text(x+w/2,y+h/2+12+2, "Number of Species: " + String(data['children'][i+1]['value']));
     extraText.attr({
       "font-size": 12,
       "font-family": "Arial",
@@ -178,7 +178,7 @@ for (let i = 0; i < Object.keys(data.children).length; i++) {
     // create a white box to use as hover
     var hoverBox = paper.rect(mouseX, mouseY, 130, 20).attr({fill: "#fff"});
     // create a text element to show the tooltip
-    var tooltipText = paper.text(mouseX + 5, mouseY + 10, "Number of Threats: " + String(data['children'][i+1]['value'])).attr({
+    var tooltipText = paper.text(mouseX + 5, mouseY + 10, "Number of Threats: " + String(data['children'][i+1]['numT'])).attr({
       "font-size": 12,
       "font-family": "Arial",
       "fill": "#000",
@@ -200,7 +200,7 @@ for (let i = 0; i < Object.keys(data.children).length; i++) {
     // create a white box to use as hover
     var hoverBox = paper.rect(mouseX, mouseY, 130, 20).attr({fill: "#fff"});
     // create a text element to show the tooltip
-    var tooltipText = paper.text(mouseX + 5, mouseY + 10, "Number of Threats: " + String(data['children'][i+1]['value'])).attr({
+    var tooltipText = paper.text(mouseX + 5, mouseY + 10, "Number of Threats: " + String(data['children'][i+1]['numT'])).attr({
       "font-size": 12,
       "font-family": "Arial",
       "fill": "#000",
