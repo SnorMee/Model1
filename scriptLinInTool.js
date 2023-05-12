@@ -149,7 +149,11 @@ for (let i = 0; i < Object.keys(data.children).length; i++) {
     //console.log(i+1, ni, Ai)
     let AiH = Math.sqrt(Ai)
     if (ni > 0){
-      var innerRect = paper.rect(x+(w-AiH)/2,y+(h-AiH)/2,AiH,AiH)
+      if (N > 1){
+        var innerRect = paper.rect(x+(w-AiH)/2,y+(h-AiH)/2,AiH,AiH)
+      }else{
+        var innerRect = paper.rect(x,y,w,h)
+      }
     }else{
       var innerRect = paper.rect(x,y,AiH,AiH)
     }
