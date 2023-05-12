@@ -99,7 +99,7 @@ let y = 10
 let h = th/numY
 let w = tw/numX
 //Text and color
-let colorList = '#339af0';
+let colorList = '#c92a2a';
 let headline = [
     '1. Residential & commercial development',
     '2. Agriculture & aquaculture',
